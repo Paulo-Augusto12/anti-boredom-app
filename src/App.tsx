@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { Box, Typography, Container } from "@mui/material";
 
 function App() {
   return (
-    <div>
-      <h1>Olá mundo</h1>
-    </div>
+    <Container>
+      <Box>
+        <h1>Hello world</h1>
+      </Box>
+    </Container>
   );
 }
 
