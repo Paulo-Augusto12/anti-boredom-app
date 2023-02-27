@@ -1,14 +1,7 @@
-import { useState } from "react";
-import { Box, Typography, Container } from "@mui/material";
-
+import React from "react";
+import { HomePage } from "./ui/pages/HomePage";
 function App() {
-  return (
-    <Container>
-      <Box>
-        <h1>Hello world</h1>
-      </Box>
-    </Container>
-  );
+  return <HomePage />;
 }
 
 export default App;
