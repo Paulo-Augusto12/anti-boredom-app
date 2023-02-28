@@ -9,7 +9,7 @@ export function useHomePage() {
   const options = [
     {
       title: "Random Task",
-      subtitle: "Get random tasks on a random escope",
+      subtitle: "Get tasks based on a random scope",
       button_title: "Create now",
       navigation: () => {
         navigate("/random/task");
