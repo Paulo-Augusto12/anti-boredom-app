@@ -13,7 +13,7 @@ export function FilteredActivitiesPage() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
-            p: 4,
+            // p: 4,
             backgroundColor: "#BFD7EA",
             borderRadius: "30px",
           }}
@@ -27,7 +27,13 @@ export function FilteredActivitiesPage() {
                 Get a Task based on a defined scope
               </Typography>
             </Typography>
-            <Box sx={{ display: "flex", gap: "1rem" }}>
+            <Box
+              sx={{
+                display: "flex",
+                gap: "1rem",
+                flexDirection: { xs: "column", sm: "column", md: "row" },
+              }}
+            >
               {hook.apiAvailableTypes.map((option) => (
                 <Button
                   sx={{
@@ -51,15 +57,16 @@ export function FilteredActivitiesPage() {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
-                    pt: "2rem",
+                    // pt: "2rem",
                   }}
                 >
                   <Box>
                     <Typography
                       variant={"h6"}
                       sx={{ color: "#087E8B", fontWeight: 700 }}
+                      textAlign={"center"}
                     >
-                      What do you think of triying: {hook.activity.activity}
+                      What do you think of : {hook.activity.activity}
                     </Typography>
                   </Box>
                 </Box>

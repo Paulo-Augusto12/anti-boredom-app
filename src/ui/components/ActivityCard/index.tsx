@@ -10,7 +10,6 @@ interface IActivityCardProps {
 }
 export function ActivityCard({
   activityType,
-  link,
   participants,
   buttonFunction,
 }: IActivityCardProps) {
@@ -21,7 +20,7 @@ export function ActivityCard({
         display: "flex",
         flexDirection: "column",
         gap: "3rem",
-        p: "4rem",
+        p: { xs: "2rem", sm: "2rem", md: "4rem" },
         backgroundColor: "#BFD7EA",
         borderRadius: "30px",
       }}
@@ -35,18 +34,6 @@ export function ActivityCard({
           participants
         </li>
       </Typography>
-      {link.trim().length ? (
-        <Typography variant="h5" sx={{ color: "#087E8B" }}>
-          <li>
-            Here is a helpfull link to this activity{" "}
-            <Link to={link} style={{ textDecoration: "none" }}>
-              {link}
-            </Link>
-          </li>
-        </Typography>
-      ) : (
-        <></>
-      )}
       <Box
         sx={{
           display: "flex",
