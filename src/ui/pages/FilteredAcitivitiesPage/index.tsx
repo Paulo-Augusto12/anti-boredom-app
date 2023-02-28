@@ -70,7 +70,7 @@ export function FilteredActivitiesPage() {
                   }}
                   id="generatedTask"
                 >
-                  <Box sx={{ scrollBehavior: "smooth", overflowY: "scroll" }}>
+                  <Box>
                     <Typography
                       variant={"h6"}
                       sx={{ color: "#087E8B", fontWeight: 700 }}
