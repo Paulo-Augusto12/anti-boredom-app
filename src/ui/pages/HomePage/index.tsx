@@ -1,12 +1,13 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { useHomePage } from "./useHomePage";
 
 import { MdAddTask } from "react-icons/md";
+import { OptionLinks } from "../../components/OptionLinks";
 export function HomePage() {
   const hook = useHomePage();
   return (
     <Container>
-      <Box sx={{ display: "flex", flexDirection: "row", gap: "3rem", p: 2 }}>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "3rem", p: 2 }}>
         <Box
           sx={{
             display: "flex",
@@ -30,9 +31,21 @@ export function HomePage() {
             </Typography>
             <MdAddTask size={64} color={"#FF5A5F"} />
           </Box>
-          <Typography variant="h5" sx={{ color: "#FF5A5F" }}>
-            Veja sugestões de tarefas para te tirar do tédio
-          </Typography>
+          <Box sx={{ display: "flex", p: 4 }}>
+            <Typography variant="h5" sx={{ color: "#FF5A5F" }}>
+              Veja sugestões de tarefas para te tirar do tédio
+            </Typography>
+          </Box>
+        </Box>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
+          {hook.options.map((option) => (
+            <OptionLinks
+              buttonTitle={option.button_title}
+              title={option.title}
+              description={option.subtitle}
+              buttonNavigation={() => option.navigation()}
+            />
+          ))}
         </Box>
       </Box>
     </Container>

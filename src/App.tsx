@@ -1,7 +1,7 @@
 import React from "react";
-import { HomePage } from "./ui/pages/HomePage";
+import { AppRoutes } from "./ui/routes/Routes";
 function App() {
-  return <HomePage />;
+  return <AppRoutes />;
 }
 
 export default App;
