@@ -26,7 +26,7 @@ export function HomePage() {
               p: 4,
             }}
           >
-            <Typography variant="h4" sx={{ color: "#C81D25", fontWeight: 800 }}>
+            <Typography variant="h4" sx={{ color: "#FF5A5F", fontWeight: 800 }}>
               Bore free
             </Typography>
             <MdAddTask size={64} color={"#FF5A5F"} />
