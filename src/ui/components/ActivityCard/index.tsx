@@ -84,7 +84,7 @@ export function ActivityCard({
             color: "#FFFF",
           }}
           onClick={() => {
-            navigate("fltered/task");
+            navigate("/filtered/task");
           }}
         >
           Go to filtered tasks
