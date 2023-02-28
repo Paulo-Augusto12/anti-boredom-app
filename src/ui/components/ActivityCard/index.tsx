@@ -31,7 +31,8 @@ export function ActivityCard({
       </Typography>
       <Typography variant="h5" sx={{ color: "#087E8B" }}>
         <li>
-          This activity can be done with up to {participants} participants
+          This activity can be carried out with up to {participants}{" "}
+          participants
         </li>
       </Typography>
       {link.trim().length ? (
@@ -53,15 +54,17 @@ export function ActivityCard({
           flexDirection: "column",
           alignItems: "flex-end",
           gap: "2rem",
+          // backgroundColor:"#FF5A5F"
         }}
       >
         <Typography variant={"h6"} sx={{ color: "#087E8B" }}>
-          Didn't like it ? generate another task
+          Didn't like it ? you can generate another task
         </Typography>
         <Button
           sx={{
             borderRadius: "20px",
-            backgroundColor: "#087E8B",
+            backgroundColor: "#0B3954",
+            "&:hover": { backgroundColor: "#087E8B" },
             color: "#FFFF",
           }}
           onClick={() => {
@@ -76,7 +79,8 @@ export function ActivityCard({
         <Button
           sx={{
             borderRadius: "20px",
-            backgroundColor: "#087E8B",
+            backgroundColor: "#0B3954",
+            "&:hover": { backgroundColor: "#087E8B" },
             color: "#FFFF",
           }}
           onClick={() => {

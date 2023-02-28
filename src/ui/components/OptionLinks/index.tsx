@@ -17,10 +17,11 @@ export function OptionLinks({
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          width: "100%",
-          p: 1,
+          flexDirection: "column",
+          gap: "2rem",
+          p: 4,
+          backgroundColor: "#BFD7EA",
+          borderRadius: "30px",
         }}
       >
         <Typography
@@ -33,20 +34,20 @@ export function OptionLinks({
         <Typography variant={"h6"} sx={{ color: "#FF5A5F", fontWeight: 600 }}>
           {description}
         </Typography>
-      </Box>
-      <Box>
-        <Button
-          sx={{
-            backgroundColor: "#087E8B",
-            color: "#FFFFFF",
-            borderRadius: "30px",
-          }}
-          onClick={() => {
-            buttonNavigation();
-          }}
-        >
-          {buttonTitle}
-        </Button>
+        <Box>
+          <Button
+            sx={{
+              backgroundColor: "#087E8B",
+              color: "#FFFFFF",
+              borderRadius: "30px",
+            }}
+            onClick={() => {
+              buttonNavigation();
+            }}
+          >
+            {buttonTitle}
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
