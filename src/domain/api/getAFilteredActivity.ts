@@ -4,7 +4,7 @@ export async function getAFilteredActivity(
   participants?: number
 ) {
   try {
-    const baseUrl = `http://www.boredapi.com/api/activity`;
+    const baseUrl = `https://www.boredapi.com/api/activity`;
 
     if (type) {
       const response = await axios.get(`${baseUrl}?type=${type}`);
