@@ -37,7 +37,8 @@ export function OptionLinks({
         <Box>
           <Button
             sx={{
-              backgroundColor: "#087E8B",
+              backgroundColor: "#0B3954",
+              "&:hover": { backgroundColor: "#087E8B" },
               color: "#FFFFFF",
               borderRadius: "30px",
             }}
