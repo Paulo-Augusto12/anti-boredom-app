@@ -55,7 +55,10 @@ export function FilteredActivitiesPage() {
                   }}
                 >
                   <Box>
-                    <Typography variant={"h6"} sx={{ color: "#087E8B", fontWeight: 700 }}>
+                    <Typography
+                      variant={"h6"}
+                      sx={{ color: "#087E8B", fontWeight: 700 }}
+                    >
                       What do you think of triying: {hook.activity.activity}
                     </Typography>
                   </Box>
