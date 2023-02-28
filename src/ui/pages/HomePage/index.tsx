@@ -33,7 +33,7 @@ export function HomePage() {
           </Box>
           <Box sx={{ display: "flex", p: 4 }}>
             <Typography variant="h5" sx={{ color: "#FF5A5F" }}>
-              Veja sugestões de tarefas para te tirar do tédio
+              Get tasks suggestions to get you out of boredom
             </Typography>
           </Box>
         </Box>

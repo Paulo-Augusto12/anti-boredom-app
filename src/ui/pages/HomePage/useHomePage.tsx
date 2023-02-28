@@ -8,17 +8,17 @@ export function useHomePage() {
   const navigate = useNavigate();
   const options = [
     {
-      title: "Tarefa Aleatória",
-      subtitle: "Gere  tarefas dentro de um escopo aleatório",
-      button_title: "Gerar Agora",
+      title: "Random Task",
+      subtitle: "Get random tasks on a random escope",
+      button_title: "Create now",
       navigation: () => {
         navigate("/random/task");
       },
     },
     {
-      title: "Foque em uma área",
-      subtitle: "Gere  tarefas com base em um filtro que você definir",
-      button_title: "Defina seu filtro",
+      title: "Focus on a specific area",
+      subtitle: "Define a filter and receive tasks based on that",
+      button_title: "Define a filter",
       navigation: () => {
         navigate("/filtered/task");
       },
