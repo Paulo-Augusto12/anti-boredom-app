@@ -6,7 +6,7 @@ interface IActivityCardProps {
   participants: number;
   price?: number;
   link: string;
-  buttonFunction: () => void;
+  buttonFunction?: () => void;
 }
 export function ActivityCard({
   activityType,
@@ -57,38 +57,44 @@ export function ActivityCard({
           // backgroundColor:"#FF5A5F"
         }}
       >
-        <Typography variant={"h6"} sx={{ color: "#087E8B" }}>
-          Didn't like it ? you can generate another task
-        </Typography>
-        <Button
-          sx={{
-            borderRadius: "20px",
-            backgroundColor: "#0B3954",
-            "&:hover": { backgroundColor: "#087E8B" },
-            color: "#FFFF",
-          }}
-          onClick={() => {
-            buttonFunction();
-          }}
-        >
-          Generate
-        </Button>
-        <Typography variant={"h6"} sx={{ color: "#087E8B" }}>
-          Or maybe you can try add filters to see more accurate tasks
-        </Typography>
-        <Button
-          sx={{
-            borderRadius: "20px",
-            backgroundColor: "#0B3954",
-            "&:hover": { backgroundColor: "#087E8B" },
-            color: "#FFFF",
-          }}
-          onClick={() => {
-            navigate("/filtered/task");
-          }}
-        >
-          Go to filtered tasks
-        </Button>
+        {buttonFunction ? (
+          <>
+            <Typography variant={"h6"} sx={{ color: "#087E8B" }}>
+              Didn't like it ? you can generate another task
+            </Typography>
+            <Button
+              sx={{
+                borderRadius: "20px",
+                backgroundColor: "#0B3954",
+                "&:hover": { backgroundColor: "#087E8B" },
+                color: "#FFFF",
+              }}
+              onClick={() => {
+                buttonFunction();
+              }}
+            >
+              Generate
+            </Button>
+            <Typography variant={"h6"} sx={{ color: "#087E8B" }}>
+              Or maybe you can try add filters to see more accurate tasks
+            </Typography>
+            <Button
+              sx={{
+                borderRadius: "20px",
+                backgroundColor: "#0B3954",
+                "&:hover": { backgroundColor: "#087E8B" },
+                color: "#FFFF",
+              }}
+              onClick={() => {
+                navigate("/filtered/task");
+              }}
+            >
+              Go to filtered tasks
+            </Button>
+          </>
+        ) : (
+          <></>
+        )}
       </Box>
     </Box>
   );
