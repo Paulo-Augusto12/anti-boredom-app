@@ -1,10 +1,10 @@
 import { Box, Card, Typography } from "@mui/material";
-import { MdOutlineCheckCircleOutline } from "react-icons/md";
+import { TbCrown } from "react-icons/tb";
 
 interface IHomePageCardProps {
   title: string;
 }
-export function HomePageCardTitle({ title }: IHomePageCardProps) {
+export function HomePageCredits({ title }: IHomePageCardProps) {
   return (
     <Card
       sx={{
@@ -21,23 +21,31 @@ export function HomePageCardTitle({ title }: IHomePageCardProps) {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
-          gap: "111px",
+          gap: "0.5rem",
           alignItems: "center",
         }}
       >
         <Typography variant="h4" sx={{ fontWeight: 700, color: "#E6E6E6" }}>
           {title}
         </Typography>
-        <MdOutlineCheckCircleOutline size={"3.75rem"} color="#E6E6E6" />
+        <TbCrown size={"3.75rem"} color="#E6E6E6" />
       </Box>
-      <Box>
+      <Box sx={{ flexDirection: "column", alignItems: "flex-start" }}>
         <Typography
           variant="h6"
           alignSelf={"stretch"}
-          sx={{ color: "#E6E6E6", fontWeight: 400 }}
+          sx={{ color: "#E6E6E6", fontWeight: 700 }}
         >
-          Using this app you will get some task suggestion to get out of your
-          boredom.
+          {" "}
+          @Paulo-Augusto12 - Developer.
+        </Typography>
+        <Typography
+          variant="h6"
+          alignSelf={"stretch"}
+          sx={{ color: "#E6E6E6", fontWeight: 700 }}
+        >
+          {" "}
+          @pabloalbrnz - UX/UI Designer.
         </Typography>
       </Box>
     </Card>

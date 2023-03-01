@@ -1,6 +1,7 @@
 import { Box, Card, Container, Typography } from "@mui/material";
 import { useHomePage } from "./useHomePage";
 import { HomePageCardTitle } from "../../components/HomePageCard";
+import { HomePageCredits } from "../../components/HomePageCredits";
 export function HomePage() {
   const hook = useHomePage();
   return (
@@ -14,7 +15,10 @@ export function HomePage() {
       >
         <Container sx={{ pt: "5rem" }}>
           <Box sx={{ display: "flex" }}>
-            <HomePageCardTitle title="Boredom free" />
+            <Box sx={{ display: "flex", flexDirection: "row", gap: "1.25rem" }}>
+              <HomePageCardTitle title="Boredom free" />
+              <HomePageCredits title="Created By" />
+            </Box>
           </Box>
         </Container>
       </Box>
