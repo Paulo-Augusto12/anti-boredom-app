@@ -61,7 +61,7 @@ export function ActivityCard({
             </li>
           </Typography>
           {link.trim().length ? (
-            <Typography>
+            <Typography variant="h6" color={"#e6e6e6"}>
               <li>Here is a helpfull link about this activity {link}</li>
             </Typography>
           ) : (
