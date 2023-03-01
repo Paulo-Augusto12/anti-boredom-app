@@ -1,33 +1,34 @@
 import { Box, Container, Typography } from "@mui/material";
 import { ActivityCard } from "../../components/ActivityCard";
 import { useRandomActivityPage } from "./useRandomActivityPage";
+import { Footer } from "../../components/Footer";
 
 export function RandomActivityPage() {
   const hook = useRandomActivityPage();
   return (
-    <Container>
-      <Box sx={{ p: 3 }}>
-        <Typography
-          variant="h5"
-          sx={{ color: "#BFD7EA", fontWeight: 900 }}
-          textAlign={"center"}
-        >
-          {" "}
-          What do you think of : {hook.activity?.activity}
-        </Typography>
-      </Box>
-      {hook.activity ? (
-        <Box>
-          <ActivityCard
-            activityType={hook.activity.type}
-            participants={hook.activity.participants}
-            link={hook.activity.link}
-            buttonFunction={() => hook.handleGetARandomActivity()}
-          />
-        </Box>
-      ) : (
-        <></>
-      )}
-    </Container>
+    <Box
+      sx={{
+        background:
+          "linear-gradient(221.67deg, #8C23BD 13.33%, #FE55A6 91.24%);",
+        height: hook.activity ? "100vh" : "90vh",
+      }}
+    >
+      <Container sx={{ pt: "5rem" }}>
+        {hook.activity ? (
+          <Box>
+            <ActivityCard
+              activityTitle={hook.activity.activity}
+              activityType={hook.activity.type}
+              participants={hook.activity.participants}
+              link={hook.activity.link}
+              buttonFunction={() => hook.handleGetARandomActivity()}
+            />
+          </Box>
+        ) : (
+          <></>
+        )}
+      </Container>
+      {hook.activity?.activity && <Footer />}
+    </Box>
   );
 }

@@ -1,17 +1,22 @@
 import { Box, Button, Typography } from "@mui/material";
+import { Lightbulb } from "phosphor-react";
 import { Link, useNavigate } from "react-router-dom";
+import { CustomButton } from "../Button";
 
 interface IActivityCardProps {
+  activityTitle: string;
   activityType: string;
   participants: number;
   price?: number;
   link: string;
-  buttonFunction?: () => void;
+  buttonFunction: () => void;
 }
 export function ActivityCard({
+  activityTitle,
   activityType,
   participants,
   buttonFunction,
+  link,
 }: IActivityCardProps) {
   const navigate = useNavigate();
   return (
@@ -20,68 +25,78 @@ export function ActivityCard({
         display: "flex",
         flexDirection: "column",
         gap: "3rem",
-        p: { xs: "2rem", sm: "2rem", md: "4rem" },
-        backgroundColor: "#BFD7EA",
+        p: "2rem",
+        backgroundColor: "#613C9D",
         borderRadius: "30px",
       }}
     >
-      <Typography variant="h5" sx={{ color: "#087E8B" }}>
-        <li>This activity will improve in your {activityType} scope</li>
-      </Typography>
-      <Typography variant="h5" sx={{ color: "#087E8B" }}>
-        <li>
-          This activity can be carried out with up to {participants}{" "}
-          participants
-        </li>
-      </Typography>
       <Box
         sx={{
           display: "flex",
-          p: 2,
-          flexDirection: "column",
-          alignItems: "flex-end",
-          gap: "2rem",
-          // backgroundColor:"#FF5A5F"
+          flexDirection: "row",
+          width: "100%",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        {buttonFunction ? (
-          <>
-            <Typography variant={"h6"} sx={{ color: "#087E8B" }}>
-              Didn't like it ? you can generate another task
+        <Typography variant="h5" sx={{ color: "#e6e6e6", fontWeight: 700 }}>
+          What do you think of {activityTitle} ?
+        </Typography>
+        <Lightbulb size={"5rem"} color="#e6e6e6" />
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "row" }}>
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <Typography variant="h5" color="#e6e6e6">
+            Improvments :
+          </Typography>
+          <Typography variant="h6" color={"#e6e6e6"}>
+            <li>
+              This Activity will improve your <b> {activityType} </b> scope
+            </li>
+          </Typography>
+          <Typography variant="h6" color={"#e6e6e6"}>
+            <li>
+              This Activity can be carried out with up to{" "}
+              <b> {participants} </b> participant{participants > 1 ? "s" : ""}
+            </li>
+          </Typography>
+          {link.trim().length ? (
+            <Typography>
+              <li>Here is a helpfull link about this activity {link}</li>
             </Typography>
-            <Button
-              sx={{
-                borderRadius: "20px",
-                backgroundColor: "#0B3954",
-                "&:hover": { backgroundColor: "#087E8B" },
-                color: "#FFFF",
-              }}
-              onClick={() => {
-                buttonFunction();
-              }}
-            >
-              Generate
-            </Button>
-            <Typography variant={"h6"} sx={{ color: "#087E8B" }}>
-              Or maybe you can try add filters to see more accurate tasks
+          ) : (
+            <Typography variant="h6" color={"#e6e6e6"}>
+              <li>
+                Unfortunally we didn't find a helpfull link about this activity{" "}
+              </li>
             </Typography>
-            <Button
-              sx={{
-                borderRadius: "20px",
-                backgroundColor: "#0B3954",
-                "&:hover": { backgroundColor: "#087E8B" },
-                color: "#FFFF",
-              }}
-              onClick={() => {
-                navigate("/filtered/task");
-              }}
-            >
-              Go to filtered tasks
-            </Button>
-          </>
-        ) : (
-          <></>
-        )}
+          )}
+        </Box>
+        <Box
+          sx={{
+            outline: "3px solid #DE69F1",
+            borderRadius: "2.5rem",
+            padding: "16px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+          }}
+        >
+          <Typography variant="h5" color="#e6e6e6">
+            Didn’t like this task? Generate another!
+          </Typography>
+          <CustomButton
+            option="RANDOM"
+            handleFunction={() => buttonFunction()}
+          />
+          <Typography variant="h5" color="#e6e6e6">
+          You get a better result filtering scopes!
+          </Typography>
+          <CustomButton
+            option="RANDOM"
+            handleFunction={() => buttonFunction()}
+          />
+        </Box>
       </Box>
     </Box>
   );
