@@ -2,6 +2,7 @@ import { Typography, Box, Button, Card } from "@mui/material";
 import { FaRandom } from "react-icons/fa";
 import { FiFilter } from "react-icons/fi";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 interface IOPtionCardsProps {
   title: string;
@@ -13,6 +14,7 @@ export function OptionsCards({
   option,
   description,
 }: IOPtionCardsProps) {
+  const navigate = useNavigate();
   return (
     <Card
       sx={{
@@ -64,6 +66,11 @@ export function OptionsCards({
             padding: "16px 32px",
             fontWeight: 700,
             "&:hover": { background: "#AB11C8" },
+          }}
+          onClick={() => {
+            option === "RANDOM"
+              ? navigate("/random/task")
+              : navigate("/filtered/task");
           }}
         >
           <AiOutlinePlusCircle size={"2rem"} />{" "}
