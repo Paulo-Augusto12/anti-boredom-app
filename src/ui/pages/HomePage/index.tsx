@@ -28,7 +28,6 @@ export function HomePage() {
                 display: "flex",
                 flexDirection: "row",
                 gap: "1.25rem",
-                // justifyContent: "space-between",
               }}
             >
               <OptionsCards
