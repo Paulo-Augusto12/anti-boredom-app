@@ -1,7 +1,6 @@
 import { Box, Card, Container, Typography } from "@mui/material";
 import { useHomePage } from "./useHomePage";
-import { MdAddTask } from "react-icons/md";
-import { OptionLinks } from "../../components/OptionLinks";
+import { HomePageCardTitle } from "../../components/HomePageCard";
 export function HomePage() {
   const hook = useHomePage();
   return (
@@ -13,12 +12,10 @@ export function HomePage() {
           height: "90vh",
         }}
       >
-        <Container>
-          <Card sx={{ backgroundColor: "##613C9D", p: "2rem" }}>
-            <Typography variant="h4" sx={{ fontWeight: 900 }}>
-              Boredom Free
-            </Typography>
-          </Card>
+        <Container sx={{ pt: "5rem" }}>
+          <Box sx={{ display: "flex" }}>
+            <HomePageCardTitle title="Boredom free" />
+          </Box>
         </Container>
       </Box>
       <Box sx={{ backgroundColor: "#592C6D", height: "20vh" }}></Box>
