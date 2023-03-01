@@ -3,6 +3,7 @@ import { FaRandom } from "react-icons/fa";
 import { FiFilter } from "react-icons/fi";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { PlusCircle, ShuffleSimple } from "phosphor-react";
 
 interface IOPtionCardsProps {
   title: string;
@@ -39,7 +40,7 @@ export function OptionsCards({
         </Typography>
         <Box>
           {option === "RANDOM" ? (
-            <FaRandom size={"3.75rem"} color="#E6E6E6" />
+            <ShuffleSimple size={"3.75rem"} color="#E6E6E6" />
           ) : (
             <FiFilter size={"3.75rem"} color="#E6E6E6" />
           )}
@@ -66,6 +67,7 @@ export function OptionsCards({
             padding: "16px 32px",
             fontWeight: 700,
             "&:hover": { background: "#AB11C8" },
+            textTransform: "none",
           }}
           onClick={() => {
             option === "RANDOM"
@@ -73,7 +75,7 @@ export function OptionsCards({
               : navigate("/filtered/task");
           }}
         >
-          <AiOutlinePlusCircle size={"2rem"} />{" "}
+          <PlusCircle size={"2rem"} />{" "}
           {option === "RANDOM" ? "New Random Task" : "New Filtered Task"}
         </Button>
       </Box>
