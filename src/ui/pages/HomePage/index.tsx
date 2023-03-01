@@ -3,6 +3,7 @@ import { useHomePage } from "./useHomePage";
 import { HomePageCardTitle } from "../../components/HomePageCard";
 import { HomePageCredits } from "../../components/HomePageCredits";
 import { OptionsCards } from "../../components/OptionsCards";
+import { Footer } from "../../components/Footer";
 export function HomePage() {
   const hook = useHomePage();
   return (
@@ -44,7 +45,7 @@ export function HomePage() {
           </Box>
         </Container>
       </Box>
-      <Box sx={{ backgroundColor: "#592C6D", height: "20vh" }}></Box>
+      <Footer />
     </>
   );
 }
