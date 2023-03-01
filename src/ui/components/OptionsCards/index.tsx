@@ -24,7 +24,7 @@ export function OptionsCards({
         borderRadius: "40px",
         display: "flex",
         flexDirection: "column",
-        gap: "0.625rem",
+        gap: "2rem",
       }}
     >
       <Box
@@ -46,15 +46,14 @@ export function OptionsCards({
           )}
         </Box>
       </Box>
-      <Box>
-        <Typography
-          variant="h6"
-          alignSelf={"stretch"}
-          sx={{ color: "#E6E6E6", fontWeight: 400 }}
-        >
-          {description}
-        </Typography>
-      </Box>
+      <Typography
+        variant="h6"
+        alignSelf={"stretch"}
+        sx={{ color: "#E6E6E6", fontWeight: 400 }}
+      >
+        {description}
+      </Typography>
+      <Box></Box>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Button
           sx={{
